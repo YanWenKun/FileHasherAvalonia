@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHasherAvalonia", "FileHasherAvalonia\FileHasherAvalonia.csproj", "{0120E262-D2D4-487C-9656-65A49CD414F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHasherAvalonia.Tests", "FileHasherAvalonia.Tests\FileHasherAvalonia.Tests.csproj", "{9A47E3C9-D7B7-4233-B5E4-A2EACE8BD5D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0120E262-D2D4-487C-9656-65A49CD414F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0120E262-D2D4-487C-9656-65A49CD414F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0120E262-D2D4-487C-9656-65A49CD414F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0120E262-D2D4-487C-9656-65A49CD414F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A47E3C9-D7B7-4233-B5E4-A2EACE8BD5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A47E3C9-D7B7-4233-B5E4-A2EACE8BD5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A47E3C9-D7B7-4233-B5E4-A2EACE8BD5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A47E3C9-D7B7-4233-B5E4-A2EACE8BD5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
