@@ -21,5 +21,8 @@ public class StringHasherTest
 
         sh = new StringHasher(Hasher.HashAlgo.SHA512, "123456");
         Assert.That(sh.HashResult, Is.EqualTo("BA3253876AED6BC22D4A6FF53D8406C6AD864195ED144AB5C87621B6C233B548BAEAE6956DF346EC8C17F5EA10F35EE3CBC514797ED7DDD3145464E2A0BAB413"));
+
+        sh = new StringHasher(Hasher.HashAlgo.BLAKE3, "123456");
+        Assert.That(sh.HashResult, Is.EqualTo("7adb787627ad5ee341fa0ba46a956e78fd85c39e195119bb260d5181b4f1e4ba"));
     }
 }

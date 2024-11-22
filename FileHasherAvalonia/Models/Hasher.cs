@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace FileHasherAvalonia.Models;
 
@@ -10,16 +11,16 @@ public abstract class Hasher(Hasher.HashAlgo algo, string input) // 使用C#12�
         MD5,
         SHA1,
         SHA256,
-        SHA512
+        SHA512,
+        BLAKE3,
+        // ReSharper restore InconsistentNaming
     }
 
     public HashAlgo UsingAlgo { get; } = algo;
 
     public string Input { get; } = input;
 
-    public string HashResult { get; protected set; } = "";
-
-    // 构造函数中的自动属性
+    public string HashResult { get; protected set; } = string.Empty;
 
     /// <summary>
     /// 将字节数组格式化到字符串
@@ -32,5 +33,14 @@ public abstract class Hasher(Hasher.HashAlgo algo, string input) // 使用C#12�
         string s = BitConverter.ToString(b);
         s = s.Replace("-", string.Empty);
         return s;
+    }
+
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("Hash Method: " + UsingAlgo + Environment.NewLine);
+        sb.Append("Hash Result: " + HashResult + Environment.NewLine);
+        sb.Append("Input: " + Input);
+        return sb.ToString();
     }
 }

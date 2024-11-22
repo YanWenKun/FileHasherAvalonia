@@ -7,14 +7,23 @@ public class StringHasher : Hasher
 {
     public StringHasher(HashAlgo algo, string input) : base(algo, input)
     {
-        byte[] byteArr = Encoding.Default.GetBytes(input);
-        HashResult = algo switch
+        byte[] byteInput = Encoding.Default.GetBytes(input);
+        if (algo == HashAlgo.BLAKE3)
         {
-            HashAlgo.MD5 => FormatBytes(MD5.Create().ComputeHash(byteArr)),
-            HashAlgo.SHA1 => FormatBytes(SHA1.Create().ComputeHash(byteArr)),
-            HashAlgo.SHA256 => FormatBytes(SHA256.Create().ComputeHash(byteArr)),
-            HashAlgo.SHA512 => FormatBytes(SHA512.Create().ComputeHash(byteArr)),
-            _ => FormatBytes(SHA256.Create().ComputeHash(byteArr)),
-        };
+            HashResult = Blake3.Hasher.Hash(byteInput).ToString();
+        }
+        else
+        {
+            byte[] byteResult = algo switch
+            {
+                HashAlgo.MD5 => MD5.HashData(byteInput),
+                HashAlgo.SHA1 => SHA1.HashData(byteInput),
+                HashAlgo.SHA256 => SHA256.HashData(byteInput),
+                HashAlgo.SHA512 => SHA512.HashData(byteInput),
+                _ => SHA256.HashData(byteInput),
+            };
+            HashResult = FormatBytes(byteResult);
+        }
+
     }
 }
